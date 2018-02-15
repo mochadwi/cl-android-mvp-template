@@ -9,24 +9,17 @@ import android.widget.TextView;
 
 import ${packageName}.R;
 
-public class ${activityClass} extends ${superClass} implements ${activityClass}Contract.View {
+public class ${activityClass} extends ${superClass} {
 
-    private ${activityClass}Contract.Presenter presenter;
+    private ${activityClass}Contract.Presenter mPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.${layoutName});
 
-        presenter = new ${activityClass}Presenter(this);
-        presenter.start();
-
+        mPresenter = new ${activityClass}Presenter(this);
 <#include "../../../../common/jni_code_usage.java.ftl">
     }
 <#include "../../../../common/jni_code_snippet.java.ftl">
-
-    @Override
-    public Context getContext() {
-        return this;
-    }
 }
