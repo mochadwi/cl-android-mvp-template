@@ -1,4 +1,7 @@
-package ${packageName}.main;
+package ${packageName};
+
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
 import android.content.Context;
 import ${superClassFqcn};
@@ -7,9 +10,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 </#if>
 
-import ${packageName}.R;
-
-public class ${activityClass} extends ${superClass} {
+public class ${activityClass}Activity extends ${superClass} {
 
     private ${activityClass}Contract.Presenter mPresenter;
 
@@ -18,7 +19,17 @@ public class ${activityClass} extends ${superClass} {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.${layoutName});
 
-        mPresenter = new ${activityClass}Presenter(this);
+        ${activityClass}Fragment view = (${activityClass}Fragment) getSupportFragmentManager()
+                .findFragmentById(R.id.layoutFragment);
+
+        if (view == null) {
+            view = ${activityClass}Fragment.newInstance();
+
+            ActivityUtils.addFragmentToActivity(getSupportFragmentManager(),
+                    view, R.id.layoutFragment);
+        }
+
+        mPresenter = new ${activityClass}Presenter(view);
 <#include "../../../../common/jni_code_usage.java.ftl">
     }
 <#include "../../../../common/jni_code_snippet.java.ftl">

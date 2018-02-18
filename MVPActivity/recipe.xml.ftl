@@ -10,16 +10,16 @@
     <open file="${escapeXmlAttribute(resOut)}/layout/${layoutName}.xml" />
 
     <instantiate from="root/src/app_package/SimpleActivity.java.ftl"
-                   to="${escapeXmlAttribute(srcOut)}/${activityClass}.java" />
+                   to="${escapeXmlAttribute(srcOut)}/${activityClass}Activity.java" />
 
-    <instantiate from="root/src/app_package/SimpleActivityContract.java.ftl"
+    <instantiate from="root/src/app_package/SimpleContract.java.ftl"
                    to="${escapeXmlAttribute(srcOut)}/${activityClass}Contract.java" />
 
-    <instantiate from="root/src/app_package/SimpleActivityFragment.java.ftl"
+    <instantiate from="root/src/app_package/SimpleFragment.java.ftl"
                    to="${escapeXmlAttribute(srcOut)}/${activityClass}Fragment.java" />
 
-    <instantiate from="root/src/app_package/SimpleActivityPresenter.java.ftl"
+    <instantiate from="root/src/app_package/SimplePresenter.java.ftl"
                    to="${escapeXmlAttribute(srcOut)}/${activityClass}Presenter.java" />
 
-    <open file="${escapeXmlAttribute(srcOut)}/${activityClass}.java" />
+    <open file="${escapeXmlAttribute(srcOut)}/${activityClass}Activity.java" />
 </recipe>

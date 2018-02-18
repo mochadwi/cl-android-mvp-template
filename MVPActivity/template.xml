@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <template
     format="5"
-    revision="1"
+    revision="2"
     name="MVP Activity"
     minApi="9"
     minBuildApi="14"
@@ -27,6 +27,15 @@
         suggest="${activityToLayout(activityClass)}"
         default="activity_main"
         help="The name of the layout to create for the activity" />
+
+    <parameter
+        id="fragmentName"
+        name="Fragment Name"
+        type="string"
+        constraints="layout|unique|nonempty"
+        suggest="${activityToLayout(activityClass)}"
+        default="fragment_main"
+        help="The name of the fragment to create for the fragment" />
 
     <parameter
         id="isLauncher"
