@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" >
     <application>
-        <activity android:name="${activityClass}"
+        <activity android:name=".${activityClass}Activity"
             <#if generateActivityTitle!true>
                 <#if isNewProject>
                     android:label="@string/app_name"

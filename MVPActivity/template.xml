@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <template
     format="5"
-    revision="3"
+    revision="4"
     name="MVP Activity"
     minApi="9"
     minBuildApi="14"
@@ -35,6 +35,21 @@
         default="activity_main"
         visibility="generateLayout"
         help="The name of the layout to create for the activity" />
+
+    <parameter
+        id="generateBase"
+        name="Base Presenter and View"
+        type="boolean"
+        default="false"
+        help="If true, this activity will create base presenter and view (automatically generated when new project)" />
+
+    <parameter
+        id="mainPackageName"
+        name="Main Package name"
+        type="string"
+        visibility="generateBase"
+        constraints="app_package|package"
+        default="com.mycompany.myapp" />
 
     <parameter
         id="isLauncher"

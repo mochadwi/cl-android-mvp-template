@@ -3,12 +3,16 @@
     <merge from="root/AndroidManifest.xml.ftl"
              to="${escapeXmlAttribute(manifestOut)}/AndroidManifest.xml" />
 
-    <merge from="root/res/values/manifest_strings.xml.ftl"
-             to="${escapeXmlAttribute(resOut)}/values/strings.xml" />
-
 <#if generateLayout>
     <#include "../common/recipe_simple.xml.ftl" />
     <open file="${escapeXmlAttribute(resOut)}/layout/${layoutName}.xml" />
+</#if>
+
+<#if isNewProject || generateBase>
+    <instantiate from="root/src/app_package/BasePresenter.java.ftl"
+                   to="${escapeXmlAttribute(srcOut)}/BasePresenter.java" />
+    <instantiate from="root/src/app_package/BaseView.java.ftl"
+                   to="${escapeXmlAttribute(srcOut)}/BaseView.java" />
 </#if>
 
     <instantiate from="root/src/app_package/SimpleActivity.java.ftl"
