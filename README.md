@@ -1,4 +1,4 @@
-# Nestyards Developer Guide (Android)
+# Developer Guide (Android)
 This repo contains a MVP template for Android Studio
 
 Installation Instruction
